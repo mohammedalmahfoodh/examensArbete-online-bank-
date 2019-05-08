@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header"/>
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<head th:replace="common/header :: navbar"/>
+
+
+
+<div class="container main">
+
+    <div class="row">
+        <div class="col-lg-2 col-md-2">
+        </div>
+        <div class="col-lg-10 col-md-10">
+            <h2 style="color:bisque">The European Central Bank is the central bank for the euro area</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-2">
+        </div>
+        <div class="col-lg-10 col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                            <h3>Euro foreign exchange reference rates: </h3>
+                            <h4> <img th:src="@{/images/flags/switzerland.png}" /> <span> Swiss franc CHF</span> </h4>
+                            <h4> <img th:src="@{/images/flags/australia.png}" /> <span> Australian dollar AUD</span> </h4>
+                            <h4> <img th:src="@{/images/flags/japan.png}" /> <span> Japanese yen JPY</span> </h4>
+                            <h4> <img th:src="@{/images/flags/poland.png}" /> <span> Polish zloty PLN</span> </h4>
+                            <h4>  <img th:src="@{/images/flags/united-kingdom.png}"/><span> Pound sterling GBP</span>  </h4>
+                            <h4>  <img th:src="@{/images/flags/denmark.png}"/><span>  	Danish krone DKK</span>  </h4>
+                            <h4>  <img th:src="@{/images/flags/united-states-of-america.png}" /> <span> US dollar USD</span></h4>
+                            <h4>  <img th:src="@{/images/flags/canada.png}"/><span>	Canadian dollar CAD</span>  </h4>
+                            <h4>  <img th:src="@{/images/flags/sweden.png}"/><span> Swedish krona SEK</span></h4>
+                            <h4>  <img th:src="@{/images/flags/norway.png}"/><span> Norwegian krone NOK</span></h4>
+                            <h4>  <img th:src="@{/images/flags/brazil.png}"/><span> Brazilian real BRL</span></h4>
+                            <h4>  <img th:src="@{/images/flags/russia.png}"/><span> Russian rouble RUB</span></h4>
+
+
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <br>
+                            <div class="table-responsive">
+                                <table id="example" class="table table-bordered table-hover table-striped table-dark">
+                                    <thead>
+                                    <tr >
+
+                                        <th style="text-align: center" >Currency</th>
+                                        <th style="text-align: center">Spot</th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody th:each="entry : ${ratesMap}"  >
+
+
+                                    <tr>
+
+                                        <td th:text="${entry.key}" style="text-align: center"/>
+                                        <td th:text="${entry.value}" style="text-align: center"/>
+
+                                    </tr>
+                                    </tbody>
+
+
+
+
+
+
+
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <h4>* All currencies quoted against the euro (base currency).</h4>
+                    <h4>* The reference rates are usually updated around 16:00 CET on every working day.</h4>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+    <div th:replace="common/header :: body-bottom-scripts"/>
+
+
+</body>
+</html>
